@@ -1,4 +1,4 @@
-package com.akrotov.aocparser;
+package com.akrotov.aocparser.data;
 
 import org.springframework.data.repository.CrudRepository;
 

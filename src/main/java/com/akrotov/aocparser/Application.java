@@ -2,6 +2,8 @@ package com.akrotov.aocparser;
 
 import java.util.List;
 
+import com.akrotov.aocparser.data.Customer;
+import com.akrotov.aocparser.data.CustomerRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.ConfigurableApplicationContext;
