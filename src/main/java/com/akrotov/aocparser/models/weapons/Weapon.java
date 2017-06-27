@@ -1,6 +1,9 @@
 package com.akrotov.aocparser.models.weapons;
 
 
+import com.akrotov.aocparser.models.weapons.cold.*;
+import com.akrotov.aocparser.models.weapons.range.*;
+
 public interface Weapon {
 
     public int attack();

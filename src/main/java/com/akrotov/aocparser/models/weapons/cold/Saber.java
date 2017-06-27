@@ -1,4 +1,6 @@
-package com.akrotov.aocparser.models.weapons;
+package com.akrotov.aocparser.models.weapons.cold;
+
+import com.akrotov.aocparser.models.weapons.Weapon;
 
 /**
  * Created by me on 27.06.17.
