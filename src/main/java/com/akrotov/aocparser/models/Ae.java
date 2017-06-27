@@ -13,8 +13,8 @@ public class Ae {
 
     private String principalityName;
     private String owner;
-    private String aeName;
-    private Type type;
+    private String name;
+    private String type;
     private Date date;
     List<Person> persons;
 
