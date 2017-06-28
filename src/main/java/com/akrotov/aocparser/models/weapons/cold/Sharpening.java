@@ -5,9 +5,12 @@ import com.akrotov.aocparser.models.weapons.Weapon;
 /**
  * Created by me on 27.06.17.
  */
-public class Sharpening implements Weapon {
-    @Override
-    public int attack() {
-        return 0;
+public class Sharpening extends ColdWeapon{
+
+    public Sharpening(int durability) {
+        super(durability);
+        minDmg = 15;
+        maxDmg = 25;
+        amountOfShots = 1;
     }
 }

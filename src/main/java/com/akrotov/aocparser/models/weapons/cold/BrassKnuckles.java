@@ -5,13 +5,12 @@ import com.akrotov.aocparser.models.weapons.Weapon;
 /**
  * Created by me on 27.06.17.
  */
-public class Saber extends ColdWeapon {
+public class BrassKnuckles extends ColdWeapon {
 
-    public Saber(int durability) {
+    public BrassKnuckles(int durability) {
         super(durability);
-        minDmg = 22;
-        maxDmg = 45;
+        minDmg = 10;
+        maxDmg = 20;
         amountOfShots = 1;
     }
-
 }

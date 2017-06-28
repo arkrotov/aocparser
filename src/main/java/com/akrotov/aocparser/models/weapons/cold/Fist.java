@@ -5,9 +5,14 @@ import com.akrotov.aocparser.models.weapons.Weapon;
 /**
  * Created by me on 27.06.17.
  */
-public class Fist implements Weapon {
-    @Override
-    public int attack() {
-        return 0;
+
+// TODO: MinDmg / MaxDmg
+public class Fist extends ColdWeapon{
+
+    public Fist(int durability) {
+        super(durability);
+        minDmg = 0;
+        maxDmg = 0;
+        amountOfShots = 1;
     }
 }

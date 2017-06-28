@@ -4,6 +4,8 @@ import com.akrotov.aocparser.models.enums.Armor;
 import com.akrotov.aocparser.models.enums.Jewel;
 import com.akrotov.aocparser.models.enums.League;
 import com.akrotov.aocparser.models.enums.Weapon;
+import com.akrotov.aocparser.models.jewels.Jewel;
+import com.akrotov.aocparser.models.weapons.Weapon;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -19,7 +21,7 @@ public class Person {
     private List<Jewel> jewels;
     private Integer initiative;
     private League league;
-    private String owner;
+    private Ae ae;
 
     private Person() {
     }
