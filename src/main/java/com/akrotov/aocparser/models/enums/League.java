@@ -1,6 +1,7 @@
 package com.akrotov.aocparser.models.enums;
 
 public enum League {
+
     I, II, III, IV, V, VI, VII, VIII, IX, X, GOLD_I, GOLD_II, GOLD_III;
 
     public static League select (String name){
