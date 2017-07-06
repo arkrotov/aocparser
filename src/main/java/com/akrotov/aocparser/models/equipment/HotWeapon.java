@@ -1,6 +1,5 @@
-package com.akrotov.aocparser.models.equipment.weapons;
+package com.akrotov.aocparser.models.equipment;
 
-import com.akrotov.aocparser.models.equipment.weapons.Weapon;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

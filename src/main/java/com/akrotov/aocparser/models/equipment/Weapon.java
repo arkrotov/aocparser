@@ -1,4 +1,4 @@
-package com.akrotov.aocparser.models.equipment.weapons;
+package com.akrotov.aocparser.models.equipment;
 
 
 import lombok.AllArgsConstructor;

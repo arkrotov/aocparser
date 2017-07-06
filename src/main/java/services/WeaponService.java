@@ -1,4 +1,8 @@
-package com.akrotov.aocparser.models.equipment.weapons;
+package services;
+
+import com.akrotov.aocparser.models.equipment.ColdWeapon;
+import com.akrotov.aocparser.models.equipment.HotWeapon;
+import com.akrotov.aocparser.models.equipment.Weapon;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.akrotov.aocparser.models.equipment.weapons;
+package com.akrotov.aocparser.models.equipment;
 
 /**
  * Created by me on 06.07.17.

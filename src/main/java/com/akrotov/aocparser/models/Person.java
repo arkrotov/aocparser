@@ -5,7 +5,7 @@ import com.akrotov.aocparser.models.enums.Jewel;
 import com.akrotov.aocparser.models.enums.League;
 import com.akrotov.aocparser.models.enums.Weapon;
 import com.akrotov.aocparser.models.equipment.jewels.Jewel;
-import com.akrotov.aocparser.models.equipment.weapons.Weapon;
+import com.akrotov.aocparser.models.equipment.Weapon;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 

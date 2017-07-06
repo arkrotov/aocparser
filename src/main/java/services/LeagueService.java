@@ -1,5 +1,7 @@
-package com.akrotov.aocparser.models.equipment;
+package services;
 
+
+import com.akrotov.aocparser.models.equipment.League;
 
 public class LeagueService {
 
