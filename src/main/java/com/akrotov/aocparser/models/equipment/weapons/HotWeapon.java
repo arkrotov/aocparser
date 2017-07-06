@@ -1,7 +1,8 @@
-package com.akrotov.aocparser.models.equipment.weapons.hot;
+package com.akrotov.aocparser.models.equipment.weapons;
 
 import com.akrotov.aocparser.models.equipment.weapons.Weapon;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.Random;
 
@@ -11,20 +12,17 @@ import java.util.Random;
 
 // TODO: Константы засоряют память
 
+@EqualsAndHashCode(callSuper = true)
 @Data
-public abstract class HotWeapon implements Weapon {
+public class HotWeapon extends Weapon {
 
-    protected int minDmg;
-    protected int maxDmg;
     protected int amountOfCartridges;
-    protected int durability;
-    protected int amountOfShots;
-    protected int accuracy;
 
     private static Random random = new Random();
 
-    public HotWeapon(int durability) {
-        this.durability = durability;
+    public HotWeapon(String name, int minDmg, int maxDmg, int durability, int amountOfShots, int accuracy, int amountOfCartridges) {
+            super(name, minDmg, maxDmg, durability, amountOfShots, accuracy);
+            this.amountOfCartridges = amountOfCartridges;
     }
 
     @Override

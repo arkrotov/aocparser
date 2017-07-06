@@ -1,59 +1,58 @@
 package com.akrotov.aocparser.models.equipment.weapons;
 
-import com.akrotov.aocparser.models.equipment.weapons.cold.*;
-import com.akrotov.aocparser.models.equipment.weapons.hot.*;
+import java.util.HashMap;
+import java.util.Map;
 
 
 // TODO: Отпарсить и добавить в конструктор значение прочности оружия
 public class WeaponService {
 
+    private static Map<String, Weapon> weaponMap = new HashMap<>();
+
+    static {
+        weaponMap.put("Fist", new ColdWeapon("Fist", 0, 0, 0, 1, 1));
+        weaponMap.put("BrassKnuckles", new ColdWeapon("BrassKnuckles",10, 20, 0, 1, 1));
+        weaponMap.put("Knife", new ColdWeapon("Knife", 18, 30, 0, 1, 0));
+        weaponMap.put("Sharprening", new ColdWeapon("Sharprening", 15, 25, 0, 1, 0));
+        weaponMap.put("Bayonet", new ColdWeapon("Bayonet", 20, 40, 0, 1, 0));
+        weaponMap.put("Saber", new ColdWeapon("Saber", 22, 45 , 0, 1, 0));
+        weaponMap.put("Scimitar", new ColdWeapon("Scimitar", 18, 28, 0, 2, 10));
+        weaponMap.put("Katana", new ColdWeapon("Katana", 55, 70, 0, 1, 15));
+        weaponMap.put("Pistol", new HotWeapon("Pistol", 10, 20, 0, 1, 1, 5));
+        weaponMap.put("Fusee", new HotWeapon("Fusee", 15, 25, 0, 1, 1, 6));
+        weaponMap.put("Musket", new HotWeapon("Musket", 18, 30 ,0, 1, 1, 7));
+        weaponMap.put("Carbine", new HotWeapon("Carbine", 20,40, 0, 1, 1,8));
+        weaponMap.put("DoublePistols", new HotWeapon("DoublePistol", 22, 45, 0, 1, 1, 10));
+        weaponMap.put("MachineGun", new HotWeapon("MachineGun", 7, 20, 0, 6, 1, 40));
+        weaponMap.put("DoubleBarreledRifle", new HotWeapon("DoubleBarreledRifle", 13, 25, 0, 2, 1, 20));
+        weaponMap.put("TripleBarreledRifle", new HotWeapon("TripleBarreledRifle", 14 , 22, 0, 3, 7, 30));
+        weaponMap.put("SniperRifle", new HotWeapon("SniperRifle", 35, 60, 0, 1, 25, 15));
+    }
+
     public static Weapon getWeapon (String name) {
         switch (name) {
-            case "withTip cold-arms hand" : return new Fist(0); //
-            case "withTip cold-arms  item_145" : return new BrassKnuckles(0);
-            case "withTip cold-arms  item_146" : return new Knife(0);
-            case "withTip cold-arms  item_147" : return new Sharpening(0);
-            case "withTip cold-arms  item_148" : return new Bayonet(0);
-            case "withTip cold-arms  item_149" : return new Saber(0);
-            case "withTip cold-arms  item_150" : return new Scimitar(0);
-            case "withTip cold-arms  item_151" : return new Katana(0);
-            case "withTip firearms  item_65" : return new Pistol(0);
-            case "withTip firearms  item_66" : return new Fusee(0);
-            case "withTip firearms  item_67" : return new Musket(0);
-            case "withTip firearms  item_68" : return new Carbine(0);
-            case "withTip firearms  item_69" : return new DoublePistols(0);
-            case "withTip firearms war-uniform item_208" : return new MachineGun(0);
-            case "withTip firearms  item_152" : return new DoubleBarreledRifle(0);
-            case "withTip firearms  item_153" : return new TripleBarreledRifle(0);
-            case "withTip firearms  item_154" : return new SniperRifle(0);
+            case "withTip cold-arms hand" : return weaponMap.get("Fist");
+            case "withTip cold-arms  item_145" : return weaponMap.get("BrassKnuckles");
+            case "withTip cold-arms  item_146" : return weaponMap.get("Knife");
+            case "withTip cold-arms  item_147" : weaponMap.get("Sharpening");
+            case "withTip cold-arms  item_148" : return weaponMap.get("Bayonet");
+            case "withTip cold-arms  item_149" : return weaponMap.get("Saber");
+            case "withTip cold-arms  item_150" : return weaponMap.get("Scimitar");
+            case "withTip cold-arms  item_151" : return weaponMap.get("Katana");
+            case "withTip firearms  item_65" : return weaponMap.get("Pistol");
+            case "withTip firearms  item_66" : return weaponMap.get("Fusee");
+            case "withTip firearms  item_67" : return weaponMap.get("Musket");
+            case "withTip firearms  item_68" : return weaponMap.get("Carbine");
+            case "withTip firearms  item_69" : return weaponMap.get("DoublePistols");
+            case "withTip firearms war-uniform item_208" : weaponMap.get("new MachineGun");
+            case "withTip firearms  item_152" : return weaponMap.get("DoubleBarreledRifle");
+            case "withTip firearms  item_153" : return weaponMap.get("TripleBarreledRifle");
+            case "withTip firearms  item_154" : return weaponMap.get("SniperRifle");
             default: throw new IllegalArgumentException();
         }
     }
 
     public static Weapon getWeaponFromDB (String name) {
-        try {
-            switch (name) {
-                case "Fist" : return new Fist (0);
-                case "BrassKnuckles" : return new BrassKnuckles(0);
-                case "Knife" : return new Knife (0);
-                case "Sharpening" : return new Sharpening (0);
-                case "Bayonet" : return new Bayonet (0);
-                case "Saber" : return new Saber (0);
-                case "Scimitar" : return new Scimitar (0);
-                case "Katana" : return new Katana (0);
-                case "Pistol" : return new Pistol (0);
-                case "Fusee" : return new Fusee (0);
-                case "Musket" : return new Musket (0);
-                case "Carbine" : return new Carbine (0);
-                case "DoublePistols" : return new DoublePistols (0);
-                case "MachineGun" : return new MachineGun (0);
-                case "DoubleBarreledRifle" : return new DoubleBarreledRifle (0);
-                case "TripleBarreledRifle" : return new TripleBarreledRifle (0);
-                case "SniperRifle" : return new SniperRifle (0);
-                default: return null;
-            }
-        } catch (NullPointerException e) {
-            return null;
-        }
+        return weaponMap.get(name);
     }
 }
