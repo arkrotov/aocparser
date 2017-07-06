@@ -1,18 +1,26 @@
-package com.akrotov.aocparser.models.equipment.jewels;
+package com.akrotov.aocparser.models.equipment;
 
+import java.util.HashMap;
+import java.util.Map;
 
-import com.akrotov.aocparser.models.equipment.jewels.other.DiamondBelt;
-import com.akrotov.aocparser.models.equipment.jewels.other.DiamondVest;
+public class JewelService {
 
-public abstract class Jewel {
+    private static Map<String, Jewel> jewelMap = new HashMap<>();
 
-    protected Integer level;
-    protected Stone stone;
+    static {
+        for (int i = 0; i < 5; i++) {
+            for (Jewel.Stone stone : Jewel.Stone.values()) {
+                if (i < 4) {
+                    jewelMap.put("Grasp" + stone.toString() + i, new Jewel("Grasp", stone, i));
+                }
 
-    public Jewel(Integer level, Stone stone) {
-        this.level = level;
-        this.stone = stone;
+                //jewelMap.put("DiamondVest" + stone.toString() + i, new Jewel("DiamondVest", stone, i+1));
+                //jewelMap.put("DiamondBelt" + stone.toString() + i, new Jewel("DiamondBelt", stone, i+1));
+
+            }
+        }
     }
+
 
     public static Jewel select(String s) {
 
@@ -20,53 +28,55 @@ public abstract class Jewel {
 
             // ----------------Перевязь------------------
             case "withTip accessory-baldric  item_158":
-                return new Grasp(0, Stone.Sapphire);
+                return jewelMap.get("GraspSapphire0");
             case "withTip accessory-baldric  item_178":
-                return new Grasp(1, Stone.Sapphire);
+                return jewelMap.get("GraspSapphire1");
             case "withTip accessory-baldric  item_179":
-                return new Grasp(2, Stone.Sapphire);
+                return jewelMap.get("GraspSapphire2");
             case "withTip accessory-baldric  item_180":
-                return new Grasp(3, Stone.Sapphire);
+                return jewelMap.get("GraspSapphire3");
 
             case "withTip accessory-baldric  item_159":
-                new Grasp(0, Stone.Amethyst);
+                return jewelMap.get("GraspAmethyst0");
             case "withTip accessory-baldric  item_181":
-                new Grasp(1, Stone.Amethyst);
+                return jewelMap.get("GraspAmethyst1");
             case "withTip accessory-baldric  item_182":
-                new Grasp(2, Stone.Amethyst);
+                return jewelMap.get("GraspAmethyst2");
             case "withTip accessory-baldric  item_183":
-                new Grasp(3, Stone.Amethyst);
+                return jewelMap.get("GraspAmethyst3");
 
             case "withTip accessory-baldric  item_160":
-                new Grasp(0, Stone.Ruby);
+                return jewelMap.get("GraspRuby0");
             case "withTip accessory-baldric  item_184":
-                new Grasp(1, Stone.Ruby);
+                return jewelMap.get("GraspRuby1");
             case "withTip accessory-baldric  item_185":
-                new Grasp(2, Stone.Ruby);
+                return jewelMap.get("GraspRuby2");
             case "withTip accessory-baldric  item_186":
-                new Grasp(3, Stone.Ruby);
+                return jewelMap.get("GraspRuby3");
 
             case "withTip accessory-baldric  item_161":
-                new Grasp(0, Stone.Emerald);
+                return jewelMap.get("GraspEmerald0");
             case "withTip accessory-baldric  item_187":
-                new Grasp(1, Stone.Emerald);
+                return jewelMap.get("GraspEmerald1");
             case "withTip accessory-baldric  item_188":
-                new Grasp(2, Stone.Emerald);
+                return jewelMap.get("GraspEmerald2");
             case "withTip accessory-baldric  item_189":
-                new Grasp(3, Stone.Emerald);
+                return jewelMap.get("GraspEmerald3");
 
             case "withTip accessory-baldric  item_162":
-                new Grasp(0, Stone.Diamond);
+                return jewelMap.get("GraspDiamond0");
             case "withTip accessory-baldric  item_190":
-                new Grasp(1, Stone.Diamond);
+                return jewelMap.get("GraspDiamond1");
             case "withTip accessory-baldric  item_191":
-                new Grasp(2, Stone.Diamond);
+                return jewelMap.get("GraspDiamond2");
             case "withTip accessory-baldric  item_192":
-                new Grasp(3, Stone.Diamond);
+                return jewelMap.get("GraspDiamond3");
 
+            // TODO: Проработать нестандартные уркашения
+            /*
             // ---------------Алмазная жилетка------------------
             case "withTip accessory-baldric  item_209":
-                return new DiamondVest(1, null);
+                return jewelMap.get("DiamondVestNULL");
             case "withTip accessory-baldric  item_210":
                 return new DiamondVest(2, null);
             case "withTip accessory-baldric  item_211":
@@ -87,9 +97,11 @@ public abstract class Jewel {
                 return new DiamondBelt(4, null);
             case "withTip accessory-belt  item_218":
                 return new DiamondBelt(5, null);
+                */
 
             default:
                 throw new IllegalArgumentException();
         }
     }
 }
+

@@ -5,7 +5,6 @@ import com.akrotov.aocparser.models.equipment.League;
 
 public class LeagueService {
 
-    //  , II, III, IV, V, VI, VII, VIII, IX, X, GOLD_I, GOLD_II, GOLD_III;
     public static League select (String name){
         switch (name) {
             case "военного дела от 0" : return new League("I");
