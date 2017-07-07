@@ -13,10 +13,6 @@ import org.springframework.batch.item.UnexpectedInputException;
 import java.io.IOException;
 import java.util.Map;
 
-/**
- * Created by me on 07.07.17.
- */
-
 
 public class HTTPReader implements ItemReader<Ae> {
 
@@ -41,6 +37,10 @@ public class HTTPReader implements ItemReader<Ae> {
 
         cookies = response.cookies();
     }
+
+
+    //
+
 
 
     public static void main(String[] args) throws Exception {

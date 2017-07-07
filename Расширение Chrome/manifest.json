@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "aocparser",
+  "version": "1.0.0",
+  
+  "default_locale": "ru",
+  "default_icon": "king.png",
+  "content_scripts": [ // какой скрипт будет запускаться на всех страницах отдельно;
+    {
+      "matches": [ "*://*/*" ],
+      "js": [ "content.js" ]
+    }
+  ],
+  "background": { // общий скрипт(фоновый скрипт), который запускается при запуске браузера;
+    "scripts": ["background.js"]
+  },
+  "permissions": [ //  пишем адрес сайта, с которого будет браться информация.
+    "http://losttime.su/*"
+  ],
+
+      "browser_action": {
+        "default_title": "LostTime",
+        "default_icon": "",
+        "default_popup": "popup.html"
+    }
+	
+}
