@@ -5,13 +5,13 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class Armor {
+public class Armor implements Defence {
 
     private String name;
     private int defence;
     private int durability;
 
-    public int def() {
+    public int defence() {
         return defence;
     }
 

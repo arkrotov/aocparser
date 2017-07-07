@@ -13,7 +13,7 @@ public class Jewel {
     private Integer level;
 
 
-    static enum Stone {
+    public enum Stone {
 
         Amethyst, Diamond, Emerald, Ruby, Sapphire;
 

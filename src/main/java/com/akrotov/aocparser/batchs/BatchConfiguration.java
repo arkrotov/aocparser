@@ -9,9 +9,7 @@ import org.springframework.batch.core.configuration.annotation.EnableBatchProces
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
-import org.springframework.batch.item.ItemProcessor;
-import org.springframework.batch.item.ItemReader;
-import org.springframework.batch.item.ItemWriter;
+import org.springframework.batch.item.*;
 import org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider;
 import org.springframework.batch.item.database.JdbcBatchItemWriter;
 import org.springframework.batch.item.file.FlatFileItemReader;
@@ -23,15 +21,47 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import java.net.URL;
+
 @Configuration
 @EnableBatchProcessing
 public class BatchConfiguration {
 
     // tag::readerwriterprocessor[]
     @Bean
-    public ItemReader<Person> reader() {
-        // Получаем страницу html (дом дерево)
-        return null;
+    public ItemReader<Cat> reader() {
+        FlatFileItemReader<Cat> reader = new FlatFileItemReader<Cat>();
+
+        // Установили ссылку
+
+        URL url1 = null;
+        URL url2 = null;
+        URL url3 = null;
+
+        return new HTTPReader();
+
+
+     /*   reader.setResource(new ClassPathResource("sample-data.csv"));
+
+
+        reader.setLineMapper(new DefaultLineMapper<String>() {{
+            setLineTokenizer(new DelimitedLineTokenizer() {{
+                setNames(new String[]{"firstName", "lastName"});
+            }});
+            setFieldSetMapper(new BeanWrapperFieldSetMapper<String>() {{
+                setTargetType(String.class);
+            }});
+        }});
+        return reader;
+        // Получаем страницу html (дом дерево)*/
+    }
+
+    public static class HTTPReader implements ItemReader<Cat> {
+
+        @Override
+        public Cat read() throws Exception, UnexpectedInputException, ParseException, NonTransientResourceException {
+            return null;
+        }
     }
 
     @Bean

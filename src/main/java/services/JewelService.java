@@ -1,4 +1,6 @@
-package com.akrotov.aocparser.models.equipment;
+package services;
+
+import com.akrotov.aocparser.models.equipment.Jewel;
 
 import java.util.HashMap;
 import java.util.Map;
